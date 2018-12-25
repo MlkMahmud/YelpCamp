@@ -52,7 +52,6 @@ app.get('*', function(req, res){
     res.send('You miss road?')
 })
 
-app.listen(100, function(){
-    console.log('WE UP!!')
-});
+app.listen(process.env.PORT);
 
+git 
