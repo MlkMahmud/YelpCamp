@@ -1,0 +1,26 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <div class="jumbotron">
+        <h1>Welcome to Our Campgrounds</h1>
+        <p>View Our Handpicked Campgrounds From all Over the World</p>
+        <p>
+            <a  class="btn-primary btn-lg" href="/campgrounds/new">Add New Camp</a>
+        </p>    
+    </div>
+    <div class="row">
+        <% for(let camp of campgrounds){ %>
+        <div class="col-sm-6 col-lg-4" style="margin-bottom: 10px;">
+            <div class="img-thumbnail text-center">
+                <img class="card-img-top" src="<%= camp.image %>">
+                <h4 class=><%= camp.name %></h4>
+                <a class="btn btn-primary" href="/campgrounds/<%= camp._id %>">More Info</a>
+            </div>  
+        </div>
+        <% } %> 
+    </div>
+       
+</div>
+       
+
+<% include ../partials/footer %>
