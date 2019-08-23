@@ -20,12 +20,12 @@ JavaScript
 ### Client
 - [ejs](https://ejs.co/)
 
-### Backend
+### Server
 - [Express](https://expressjs.com/)
 - [MongoDB](https://www.mongodb.com/)
 - [Mongoose](https://mongoosejs.com/)
 
-### Aunthentication
+### Authentication
 - [Passport](http://www.passportjs.org/)
 
 
