@@ -13,6 +13,7 @@ const indexRoutes = require('./routes/index');
 const commentRoutes = require('./routes/comments');
 
 const app = express();
+const port = process.env.PORT || 3000; 
 
 mongoose.connect(process.env.DB_URI);
 
@@ -51,6 +52,6 @@ app.get('*', (req, res) => {
   res.send('You miss road?');
 });
 
-app.listen(3000, () => {
-  console.log('RUNNING!!');
+app.listen(port, () => {
+  console.log(`Running on ${port}`);
 });

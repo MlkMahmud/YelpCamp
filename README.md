@@ -32,6 +32,7 @@ JavaScript
 ## Usage
 ```JavaScript
 Add a MongoDB URI as the value for DB_URI env variable
+Add a PORT env variable or it defaults to 3000
 npm install
 npm start
 ```
