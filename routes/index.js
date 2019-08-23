@@ -1,51 +1,46 @@
-const express = require('express'),
-      router  = express.Router(),
-      User    = require('../models/user'),
-      passport= require('passport'); 
+'use strict'
 
-router.get("/register", function(req, res){
-    res.render("campgrounds/register")
-    
-})
+const express = require('express');
+const router = express.Router();
+const User = require('../models/user');
+const passport= require('passport'); 
 
-router.post("/register", function(req, res, next){
-    newUser = new User({username: req.body.username});
-    User.register(newUser, req.body.password, function(err, user){
-        if(err){
+router.get("/register", (req, res) => {
+    res.render("campgrounds/register");
+});
+
+router.post("/register", (req, res, next) => {
+    const newUser = new User({ username: req.body.username });
+    User.register(newUser, req.body.password, (err, user) => {
+        if (err) {
             console.log(err)
             req.flash('error', err.message)
             return res.redirect("/register")
         }
-        passport.authenticate("local")(req, res, function(){
+        passport.authenticate("local")(req, res, () => {
             next()
             
-        })
-    }) 
-}, function(req, res){
+        });
+    });
+}, (req, res) => {
     req.flash('success', 'Welcome' + ' ' + req.body.username);
-  
     res.redirect("/campgrounds")
-    
-})
-
-router.get("/login", function(req, res){
-    res.render("campgrounds/login")
-    
-    
 });
 
-router.post('/login', passport.authenticate('local', { failureFlash: true, failureRedirect: '/login'}), function(req, res){
-    req.flash('success', `Welcome Back ${req.body.username}`)
+router.get("/login", (req, res) => {
+    res.render("campgrounds/login")  
+});
+
+router.post('/login', passport.authenticate('local', { failureFlash: true, failureRedirect: '/login'}), (req, res) => {
+    req.flash('success', `Welcome Back ${req.body.username}`);
     res.redirect('/campgrounds');
     });
 
 
-
-
-router.get("/logout", function(req, res){
-    req.flash('success', 'Farewell' + ' ' + req.user.username)
+router.get("/logout", (req, res) => {
+    req.flash('success', 'Farewell' + ' ' + req.user.username);
     req.logOut();
-    res.redirect("/login")
+    res.redirect("/login");
 });
 
 module.exports = router;

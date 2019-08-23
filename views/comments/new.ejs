@@ -1,27 +1,39 @@
 <% include ../partials/header %>
 
 <div class="container">
-    <div class="row">
-        <h1 style="margin: 20px auto; text-transform: uppercase;">Add a new comment to <%= camp.name %></h1>
-    </div>
+  <div class="row">
+    <h1 style="margin: 20px auto; text-transform: uppercase;">
+      Add a new comment to <%= camp.name %>
+    </h1>
+  </div>
 </div>
 
 <form method="POST" action="/campgrounds/<%= camp._id %>/comments">
-    <div class="form-group">
-        <input class="form-control" style="width: 30%; margin: 0 auto;" type="text" placeholder="Text" name="text" required>
-    </div>
-    
-    <div class="form-group">
-        <button style="width:30%; display: block; margin: 0 auto;" class="btn-md btn-danger rounded" type="submit">POST</button>
-    </div>
+  <div class="form-group">
+    <input
+      class="form-control"
+      style="width: 30%; margin: 0 auto;"
+      type="text"
+      placeholder="Text"
+      name="text"
+      required
+    />
+  </div>
+
+  <div class="form-group">
+    <button
+      style="width:30%; display: block; margin: 0 auto;"
+      class="btn-md btn-danger rounded"
+      type="submit"
+    >
+      POST
+    </button>
+  </div>
 </form>
-    <div class="row">
-        <div style="width:30%;" class="mx-auto">
-            <a href="/campgrounds/<%=camp._id%>" style="text-align: left;">Back</a>
-        </div>
-    </div>
-    
-
-
+<div class="row">
+  <div style="width:30%;" class="mx-auto">
+    <a href="/campgrounds/<%=camp._id%>" style="text-align: left;">Back</a>
+  </div>
+</div>
 
 <% include ../partials/footer %>

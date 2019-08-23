@@ -35,7 +35,7 @@
                                 <p class="card-text d-inline">
                                     <%=comment.text%> 
                                  </p>
-                                 <span class="float-right"> <%=date%></span>
+                                 <span class="float-right"> <%=comment.created.toDateString()%></span>
                                  <% if(currentUser && comment.author.id.equals(currentUser._id)){%>
                                     <div class="mb-4 mt-2">
                                         <a href="/campgrounds/<%=camp._id%>/comments/<%=comment._id%>/edit" class="btn btn-sm btn-warning">EDIT</a>

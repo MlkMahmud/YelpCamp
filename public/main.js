@@ -1,3 +1,5 @@
+'use strict'
+
 let images = ['/images/camp2.jpg', '/images/camp3.jpg', '/images/camp4.jpg', '/images/camp1.jpg'];
 let display = document.querySelector('.img');
 

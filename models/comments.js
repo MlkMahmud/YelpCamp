@@ -1,7 +1,10 @@
-const mongoose = require("mongoose"),
+'use strict'
 
-commentSchema = new mongoose.Schema({
+const mongoose = require("mongoose");
+
+const commentSchema = new mongoose.Schema({
     text: String,
+    created: {type: Date, default: Date.now},
     author: {
         id: {
             type: mongoose.Schema.Types.ObjectId,
