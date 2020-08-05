@@ -1,6 +1,6 @@
 # YelpCamp
 
-My first ever CRUD application, YelpCamp is basically Yelp, but for Camp sites. This application was built primarily to better my understanding of server-side rendering and interfacing with a non-relational database. 
+My first ever CRUD application. This application was built primarily to better my understanding of server-side rendering and interfacing with a non-relational database. 
 
 
 ## Screenshots
